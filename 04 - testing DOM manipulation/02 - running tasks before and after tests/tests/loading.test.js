@@ -13,10 +13,22 @@ describe('The loading() method', function () {
 		elem = document.querySelector('[data-loading]');
 	});
 
-	// Wipe the DOM after each test
+	// // Wipe the DOM after each test
 	// This isn't necessary since the Element.innerHTML property wipes the DOM already
 	// afterEach(function () {
 	// 	document.body.innerHTML = '';
+	// });
+
+	// // Run a task before any tests
+	// // This is not needed in our tests here
+	// beforeAll(function () {
+	// 	return somePromise();
+	// });
+
+	// // Run a task after all tests
+	// // This is not needed in our tests here
+	// afterAll(function () {
+	// 	return somePromise();
 	// });
 
 	test('loading message is displayed in the UI', function () {
@@ -27,13 +39,6 @@ describe('The loading() method', function () {
 	test('custom message is used if provided', function () {
 		loading('Loading your character');
 		expect(elem.textContent).toBe('Loading your character');
-	});
-
-	test('does not throw an error if no element is found', function () {
-		elem.remove();
-		expect(function () {
-			loading();
-		}).not.toThrowError();
 	});
 
 });
