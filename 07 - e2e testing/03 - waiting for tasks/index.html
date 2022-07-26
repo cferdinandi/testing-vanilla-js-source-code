@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Say Hi!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+			body {
+				margin: 1em auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			label,
+			input {
+				display: block;
+				width: 100%;
+			}
+
+			label {
+				font-weight: bold;
+			}
+
+			input {
+				margin-bottom: 1em;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>Say Hi!</h1>
+
+		<form>
+			<label for="fname">What's your name?</label>
+			<input type="text" id="fname">
+
+			<p>
+				<button>Say Hi</button>
+			</p>
+		</form>
+
+		<div id="greeting" aria-live="polite"></div>
+
+
+		<script>
+			// DOM elements
+			let form = document.querySelector('form');
+			let name = document.querySelector('#fname');
+			let greeting = document.querySelector('#greeting');
+			let timeout;
+
+			/**
+			 * Get a greeting
+			 * @param  {String} name The name of the person to greet
+			 * @return {String}      The greeting
+			 */
+			function sayHi (name = 'there') {
+				return `Hi ${name}!`;
+			}
+
+			/**
+			 * Handle submit events
+			 * @param  {Event} event The event object
+			 */
+			function submitHandler (event) {
+
+				// Stop the form from reloading the page
+				event.preventDefault();
+
+				// Show a greeting and clear field
+				greeting.textContent = sayHi(name.value);
+				name.value = '';
+
+				// Cancel an existing timeouts
+				clearTimeout(timeout);
+
+				// Clear the greeting after 3 seconds
+				timeout = setTimeout(function () {
+					greeting.textContent = '';
+				}, 3000);
+
+			}
+
+			// Handle form submit events
+			form.addEventListener('submit', submitHandler);
+		</script>
+	</body>
+</html>

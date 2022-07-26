@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"test:unit": "node --experimental-vm-modules node_modules/.bin/jest"
+		"test:unit": "node --experimental-vm-modules node_modules/.bin/jest --coverage"
 	},
 	"devDependencies": {
 		"jest": "^28.1.3",

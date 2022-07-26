@@ -18,7 +18,7 @@ function getHTML (data) {
 				return `
 					<div class="msg">
 						<div class="msg-date">
-							<a href="${msg.url}">${msg.date}</a>
+							<a href="${msg.link}">${msg.date}</a>
 						</div>
 						<div class="msg-content">${msg.content}</div>
 					</div>`;
