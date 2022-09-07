@@ -1,6 +1,6 @@
 {
-	"name": "testing-vanilla-js",
-	"description": "Learn how to test your JavaScript.",
+	"name": "calculator-js",
+	"description": "An app for doing math",
 	"version": "1.0.0",
 	"license": "MIT",
 	"type": "module",

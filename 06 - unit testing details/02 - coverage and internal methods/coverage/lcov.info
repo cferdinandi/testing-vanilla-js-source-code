@@ -11,14 +11,14 @@ FNF:7
 FNH:7
 FNDA:1,getNoDataHTML
 FNDA:2,getHTML
-FNDA:10,(anonymous_2)
+FNDA:4,(anonymous_2)
 FNDA:3,getData
 FNDA:3,(anonymous_4)
 FNDA:2,(anonymous_5)
 FNDA:1,(anonymous_6)
 DA:6,1
 DA:15,2
-DA:18,10
+DA:18,4
 DA:35,3
 DA:37,3
 DA:38,3
